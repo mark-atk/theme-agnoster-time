@@ -74,6 +74,10 @@ function prompt_vi_mode -d 'vi mode status indicator'
 end
 
 function fish_right_prompt -d 'Prints right prompt'
+  set -l command_time (date "+%H:%M:%S")
+  set_color yellow
+  echo -n "$command_time "
+
   if not test "$fish_key_bindings" = "fish_default_key_bindings"
     prompt_vi_mode
     set_color normal
